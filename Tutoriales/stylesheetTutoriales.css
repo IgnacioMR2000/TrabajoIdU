@@ -36,6 +36,12 @@
 #tutorialList a{
 	text-decoration: none;
 	color: #212529;
+	padding-right: 5%;
+}
+
+#tutoalList br{
+	margin-top: 5%;
+	margin-bottom: 5%;
 }
 
 #tutorialList a.active{
@@ -45,7 +51,7 @@
 
 
 .divider {
-	width: 50%;
+	width: 95%;
 	height: 1px;
 	background-color: black;
 	margin-bottom: 2%;

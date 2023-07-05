@@ -77,11 +77,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function cargarComentarios() {
 	comentarios = JSON.parse(sessionStorage.getItem('comentarios'));
-	let lista = document.getElementById("comentarios");
-
+	let espacio_lista = document.getElementById("espacio_lista");
 	console.log("COMENTARIOS AL CARGAR: " + comentarios);
 
 	if (comentarios && comentarios.length > 0) {
+		let lista = document.createElement("ul");
+		lista.setAttribute('id', "comentarios");
+
 		console.log("EMPIEZO A PONER COMENTARIOS. TOTAL A PONER: " + comentarios.length);
 		for(let i = 0; i < comentarios.length; i++) {
 			let usuario = comentarios[i].usuario;
@@ -100,7 +102,7 @@ function cargarComentarios() {
 			cmt.appendChild(texto);
 
 			lista.appendChild(cmt);
-
+			espacio_lista.appendChild(lista);
 			console.log("Comentario añadido. Usuario: " + usuario + ", comentario: " + comentario);
 		}
 	}

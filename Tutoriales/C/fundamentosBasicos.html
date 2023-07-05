@@ -86,9 +86,9 @@
 
   <main>
 
-    <div class="container row">
+    <div class="pe-0 container row" style="max-width: 90%;">
 
-      <div class="col-md-auto ps-0">
+      <div class="col-sm-2 ps-0">
         <button data-bs-toggle="collapse" data-bs-target="#tutorialList" aria-expanded="false" aria-controls="tutorialList" id="boton_mostrar">
           Mostrar páginas del tutorial
         </button>
@@ -96,22 +96,34 @@
             <h2 class="left">Tutorial C</h2>
             <div class="divider"></div>
             <a href="fundamentosBasicos.html" class="active">Fundamentos básicos</a><br>
+            <div class="divider"></div>
             <a href="variables.html">Variables, tipos de datos y conversión</a><br>
+            <div class="divider"></div>
             <a href="operadores.html">Operadores y booleanos</a><br>
+            <div class="divider"></div>
             <a href="condicionales.html">Condicionales if-else y switch</a><br>
+            <div class="divider"></div>
             <a href="bucles.html">Bucles for y while</a><br>
+            <div class="divider"></div>
             <a href="arrays.html">Arrays y Strings</a><br>
+            <div class="divider"></div>
             <a href="leerTeclado.html">Lectura desde teclado</a><br>
+            <div class="divider"></div>
             <a href="punteros.html">Direccionamiento de memoria y punteros</a><br>
+            <div class="divider"></div>
             <a href="funciones.html">Funciones</a><br>
+            <div class="divider"></div>
             <a href="ficheros.html">Ficheros</a><br>
+            <div class="divider"></div>
             <a href="estructuras.html">Estructuras</a><br>
+            <div class="divider"></div>
             <a href="enumerados.html">Enumerados</a><br>
+            <div class="divider"></div>
             <a href="CAutoevaluacion.html">Autoevaluación de C</a><br>
         </div>
       </div>
 
-      <section class="col-lg-9 py-5 container">
+      <section class="col-lg-10 py-5 px-1">
         <div class=" py-lg-5">
           <h1 class="h3">Fundamentos básicos</h1>
           <p>
@@ -137,12 +149,13 @@
           <div class="text-black text-left mt-4">
             <h3>Comentarios</h3>
             <form id="nuevo_comentario" class="mb-3">
-              <textarea class="form-control" id="comment_box" rows="3" placeholder="Escribe tu comentario"></textarea>
+              <label for="comment_box">Escribe aquí tu comentario:</label>
+              <textarea class="form-control" id="comment_box" rows="3"></textarea>
               <button type="submit" class="btn btn-dark mt-1" id="btn_subir" disabled>Añadir comentario</button>
               <span id="advertencia" style="color: red; margin-left: 2%"></span>
             </form>
-            <ul id="comentarios">
-            </ul>
+            <div id="espacio_lista">
+            </div>
           </div>
         </div>
       </section>
