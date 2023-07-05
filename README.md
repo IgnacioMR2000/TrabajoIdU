@@ -11,6 +11,6 @@ Utilizando Live Server
 - Tener la extensión Live Server de Visual Studio Code.
 - Hacer click derecho al archivo index.html de la página principal y seleccionar Open with Live Server.
 
-Utilizando Github Pages
-
+Utilizando Github Pages (NO UTILIZAR)
+  Debido a que GitHub Pages sigue una jerarquía distinta a la hora de desplegar la aplicación (el directorio raíz no es el mismo), muchas funciones no son compatibles con este método. Si aún así se quiere seguir adelante, usar este método:
 - Visitar https://ignaciomr2000.github.io/TrabajoIdU/
