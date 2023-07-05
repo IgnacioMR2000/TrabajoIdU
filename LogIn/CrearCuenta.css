@@ -1,14 +1,8 @@
-.form-signin {
-    max-width: 1000px;
-    padding: 15px;
-  }
-  
   form{
     margin: auto;
-    width: 50%;
+    max-width: 90%;
     border: 3px solid rgb(212, 211, 211);
     padding: 10px;
     border-radius: 10px;
   }
-  
-  
+

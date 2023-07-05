@@ -11,16 +11,16 @@ let diccionario = {
 	'Ficheros' : "ficheros",
 	'Estructuras' : "estructuras",
 	'Enumerados' : "enumerados",
-	'Autoevaluación de C' : "EjemploAutoevaluacion"
+	'Autoevaluación en C' : "CAutoevaluacion"
   };
 
-const tutosC = 13;
-let visitedCPages = [];
-let enlacesC = [];
+const tutosC = 12;
+//let visitedCPages = [];
+//let enlacesC = [];
 
 //Al cargar la pagina, si estamos en Cuenta, recoge el componente perfil y lo actualiza si es necesario
 document.addEventListener("DOMContentLoaded", function() {
-	if (window.location.pathname == '../Cuenta/Cuenta.html')
+	if (window.location.pathname == '../Cuenta/Cuenta.html' || window.location.pathname == '/Cuenta/Cuenta.html')
 	{
 		const profile = document.getElementById("profile");
 
@@ -33,31 +33,43 @@ document.addEventListener("DOMContentLoaded", function() {
 		console.log("Estoy en ubicacion: " + window.location.pathname);
 });
 
+//Muestra el último tutorial visitado por el usuario con sesión iniciada, o nada si no ha visto ninguno
 function showLast() {
-	lastPage = sessionStorage.getItem('lastPage');
-  console.log("lastPage es: " + lastPage);
+	const sesion = JSON.parse(sessionStorage.getItem('sesion'));
 
-  if (lastPage != null) {
-	const newItem = document.createElement('h1');
-	const linktext = document.createElement('a');
-	linktext.setAttribute('href', '../Tutoriales/C/' + diccionario[lastPage] + ".html");
-	console.log("El valor de " + lastPage + " en diccionario es " + diccionario[lastPage]);
-	linktext.appendChild(document.createTextNode(lastPage));
-	newItem.appendChild(document.createTextNode("Vuelve a: "));
-	newItem.appendChild(linktext);
-	profile.insertBefore(newItem, profile.children[1]);
-  } else {
-	console.log("lastPage es nulo");
-  }
+	console.log("A mostrar last");
+	if (sesion === true) {
+		let cuentaActiva = JSON.parse(sessionStorage.getItem('cuentaActiva'));
+		lastPage = cuentaActiva.lastPage;
+		console.log("lastPage es: " + lastPage);
+
+		if (lastPage != null && lastPage.length > 0) {
+			const newItem = document.createElement('h4');
+			const linktext = document.createElement('a');
+			linktext.setAttribute('href', '../Tutoriales/C/' + diccionario[lastPage] + ".html");
+			console.log("El valor de " + lastPage + " en diccionario es " + diccionario[lastPage]);
+			linktext.appendChild(document.createTextNode(lastPage));
+			newItem.appendChild(document.createTextNode("Vuelve a: "));
+			newItem.appendChild(linktext);
+			newItem.setAttribute('style', 'margin-top: 1%')
+			profile.insertBefore(newItem, profile.children[1]);
+		} else {
+			console.log("lastPage es nulo");
+		}
+	} else {
+		console.log("Sesion no iniciada");
+	}
+
 }
 
+//Muestra el porcentaje de páginas visitadas de un tutorial concreto por el usuario
 function showPercentage(){
 	//if(!visitedCPages)
 	//	sessionStorage.setItem('visitedCPages', JSON.stringify([]));
-	visitedCPages = JSON.parse(sessionStorage.getItem('visitedCPages'));
+	let visitedCPages = JSON.parse(sessionStorage.getItem('cuentaActiva')).visitedCPages;
 	let barraProgreso = document.getElementById('progressBar');
 	let percentageNumber = document.createElement('span');
-	if(!barraProgreso && visitedCPages && visitedCPages.length > 0)
+	if(!barraProgreso)
 	{
 		const newItem = document.createElement('a');
 		newItem.innerText = "Progreso actual en C";
@@ -75,64 +87,78 @@ function showPercentage(){
 		newItem.appendChild(percentageNumber);
 
 		console.log("Numero hijos de profile: " + profile.children.length);
-		profile.insertBefore(newItem, profile.children[profile.children.length - 3]); //parece que el boton es el antepenultimo o algo
-		profile.insertBefore(document.createElement('br'), profile.children[profile.children.length - 3]);
+		profile.insertBefore(newItem, profile.children[1]); //parece que el boton es el antepenultimo o algo
+		profile.insertBefore(document.createElement('br'), profile.children[1]);
+		//profile.insertBefore(newItem, profile.children[profile.children.length - 3]); //parece que el boton es el antepenultimo o algo
+		//profile.insertBefore(document.createElement('br'), profile.children[profile.children.length - 3]);
 	}
 	if(barraProgreso)
 	{
 		barraProgreso.setAttribute('value', visitedCPages.length / tutosC * 100);
-		percentageNumber.innerText = (visitedCPages.length / tutosC * 100).toFixed(1) + "%";
-		console.log("Llevas un " + visitedCPages.length / tutosC * 100 + "% completo de la lección de C. Lecciones: " + visitedCPages.length);
+
+		if (visitedCPages)
+			percentageNumber.innerText = (visitedCPages.length / tutosC * 100).toFixed(1) + "%";
+		else
+			percentageNumber.innerText = 0 + "%";
+		console.log("Llevas un " + visitedCPages.length / tutosC * 100 + "% completo de la lección de C. Lecciones hechas: " +
+			visitedCPages.length + ", totales: " + tutosC);
 	}
 }
 
+//Añade página visitada a la cuenta del usuario
 function addPage(val){
-	const cuenta = JSON.parse(sessionStorage.getItem("cuenta"));
-	if (cuenta && cuenta.sesionActiva)
+	let sesionActiva = JSON.parse(sessionStorage.getItem("sesion"));
+
+	if (sesionActiva === true)
 	{
-		visitedCPages = JSON.parse(sessionStorage.getItem('visitedCPages'));
-		enlacesC = JSON.parse(sessionStorage.getItem('enlacesC'));
+		let cuenta = JSON.parse(sessionStorage.getItem("cuentaActiva"));
+
+		cuenta.lastPage = val;
+		let visitedCPages = cuenta.visitedCPages;
+		let enlacesC = cuenta.enlacesC;
 		//console.log("Numero elementos en array: " + visitedCPages.length);
-		if(visitedCPages === null)
+		if(visitedCPages === null || visitedCPages.length === 0)
 		{
 			console.log("ENTRO EN NULL");
-			visitedCPages = [];
-			visitedCPages.push(val);
-			sessionStorage.setItem('visitedCPages', JSON.stringify(visitedCPages));
+			cuenta.visitedCPages = [];
+			cuenta.visitedCPages.push(val);
 
-			enlacesC = [];
-			enlacesC.push("C/" + diccionario[val] + ".html");
-			sessionStorage.setItem('enlacesC', JSON.stringify(enlacesC));
+			cuenta.enlacesC = [];
+			cuenta.enlacesC.push("C/" + diccionario[val] + ".html");
 
 			console.log("Añadido " + val + " a lista de C. Num elementos: " + visitedCPages.length);
 			console.log("Añadido " + diccionario[val] + ".html a lista de enlacesC. Num elementos: " + enlacesC.length);
 		}
 		else
 		{
-			visitedCPages = JSON.parse(sessionStorage.getItem('visitedCPages'));
-			enlacesC = JSON.parse(sessionStorage.getItem('enlacesC'));
+			//visitedCPages = JSON.parse(sessionStorage.getItem('visitedCPages'));
+			//enlacesC = JSON.parse(sessionStorage.getItem('enlacesC'));
 			console.log("visitedCPages es " + visitedCPages);
 			console.log("enlacesC es " + enlacesC);
 			if(!visitedCPages.includes(val))
 			{
 				visitedCPages.push(val);
-				sessionStorage.setItem('visitedCPages', JSON.stringify(visitedCPages));
-
 				enlacesC.push("C/" + diccionario[val] + ".html");
-				sessionStorage.setItem('enlacesC', JSON.stringify(enlacesC));
 
 				console.log("Añadido " + val + " a lista de C. Num elementos: " + visitedCPages.length);
 			}
 		}
-	}
+		sessionStorage.setItem("cuentaActiva", JSON.stringify(cuenta));		//Almacenamos los cambios en la cuenta
+	} else
+		console.log("No añado página porque no hay sesión iniciada");
 }
 
+//Añade un checkmark en las páginas que ha visitado el usuario
 function addCheck(){
-	const cuenta = JSON.parse(sessionStorage.getItem("cuenta"));
-	if (cuenta && cuenta.sesionActiva)
+	const cuenta = JSON.parse(sessionStorage.getItem("cuentaActiva"));
+	let sesionActiva = JSON.parse(sessionStorage.getItem("sesion"));
+
+	console.log("AÑADIENDO CHECKS, CUENTA:" + cuenta.email + ", PÁGINAS: " + cuenta.enlacesC);
+
+	if (sesionActiva === true)
 	{
 		const lista = document.querySelectorAll('a');
-		enlacesC = JSON.parse(sessionStorage.getItem('enlacesC'));
+		let enlacesC = cuenta.enlacesC;
 
 		for(let i = 0; i < lista.length; i++){
 			read = lista[i].getAttribute('id');

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayuda Tutorio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="ayuda.css">
+</head>
+<body>
+  <header>
+    <h1>Página de Ayuda Tutorio</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#categoria1">Crear cuenta</a></li>
+	  <li><a href="#categoria2">Iniciar sesión</a></li>
+      <li><a href="#categoria3">Cerrar sesión</a></li>
+      <li><a href="#categoria4">Acceder a un tutorial</a></li>
+    </ul>
+  </nav>
+  <button class="fixed-button" id="scroll-top-button">Volver arriba ↑</button>
+  <script>
+    var scrollTopButton = document.getElementById('scroll-top-button');
+
+    scrollTopButton.addEventListener('click', function() {
+      // Hago que la página se desplace hacia arriba
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <main id="contenidos">
+    <section id="categoria1">
+		<h1>Crear cuenta</h1>
+		<div id="CrearCuenta">
+			<p>Necesita crear una cuenta para poder guardar su progreso en los distintos tutoriales, además de poder regresar al
+				último visitado y poner comentarios.
+				Para crear una cuenta, siga estos pasos:
+			</p>
+			<h5>
+				1. Haga click en el botón de iniciar sesión
+			</h5>
+			<img src="/Recursos/AyudaInicioSesion.png" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+				alt="Pagina principal con boton enlace de inicar sesión resaltado">
+			<h5>
+				2. Haga click en "¿Aún no tienes una cuenta? Haz click aquí"
+			</h5>
+			<img src="/Recursos/AyudaRegistro.png" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+				alt="Pagina de inicio de sesión con enlace de '¿Aún no tienes una cuenta? Haz click aquí' resaltado">
+			<h5>
+				3. Introduzca su correo electrónico y una contraseña, repita la contraseña debajo. Asegúrese de que el correo es
+				válido y contiene @. Haga click en Crear cuenta
+			</h5>
+			<img src="/Recursos/AyudaRegistro2.png" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+				alt="Pagina de registro con campos de correo electrónico, contraseña y repetir contraseña señalados, y botón de Crear cuenta resaltado">
+			<h5>
+				4. ¡Listo! Se le avisará de que se ha creado una cuenta, y en la pantalla principal aparecerá el enlace para ir
+				al perfil
+			</h5>
+			<img src="/Recursos/PagPpalSesionIniciada.PNG" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+				alt="Pagina principal con enlace de iniciar sesión sustituido por enlace a perfil">
+		</div>
+    </section>
+	<div class="divider"></div>
+	<section id="categoria2" class="mt-4">
+		<h1>Iniciar sesión</h1>
+		<p>Necesita crear tener una cuenta iniciada para poder guardar su progreso en los distintos tutoriales, además de poder
+			regresar al
+			último visitado y poner comentarios.
+			Para iniciar sesión, siga estos pasos:
+		</p>
+		<h5>
+			1. Haga click en el botón de iniciar sesión
+		</h5>
+		<img src="/Recursos/AyudaInicioSesion.png" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+			alt="Pagina principal con boton enlace de inicar sesión resaltado">
+		<h5>
+			2. Introduzca su correo electrónico y la contraseña con la que se registró. Asegúrese de que el correo es
+			válido y contiene @. Haga click en Iniciar sesión. Si no tiene cuenta, haga click <a href="#categoria1">aquí</a>
+			para acceder a la ayuda de creación de cuentas
+		</h5>
+		<img src="/Recursos/AyudaInicioSesion2.png" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+			alt="Pagina principal con campos de correo electrónico y contraseña señalados, y botón de inicar sesión resaltado">
+		<h5>
+			3. ¡Listo! Se le dará la bienvenida, y en la pantalla principal aparecerá el enlace para ir
+			al perfil
+		</h5>
+		<img src="/Recursos/PagPpalSesionIniciada.PNG" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+			alt="Pagina principal con enlace de iniciar sesión sustituido por enlace a perfil">
+	  </section>
+	  <div class="divider"></div>
+	<section id="categoria3">
+		<h1>Cerrar sesión</h1>
+		<p>Para cerrar sesión, siga estos pasos:</p>
+		<h5>
+			1. Haga click en el botón de Perfil
+		</h5>
+		<img src="/Recursos/AyudaCerrarSesion.png" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+			alt="Pagina principal con boton enlace de Perfil resaltado">
+		<h5>
+			2. En el apartado de "Gestión de la cuenta", haga click en el botón "Opciones de cuenta"
+		</h5>
+		<img src="/Recursos/AyudaGestionCuenta.png" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+			alt="Pagina de perfil con botón de Opciones de cuenta señalado y resaltado">
+		<h5>
+			3. Haga click en el botón de "Cerrar sesión"
+		</h5>
+		<img src="/Recursos/AyudaOpcionesCuenta.png" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+			alt="Pagina de opciones de la cuenta con botón de Cerrar sesión señalado y resaltado">
+		<h5>
+			4. Confirme la operación
+		</h5>
+		<img src="/Recursos/AyudaConfirmarCerrarSesion.PNG" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+			alt="Pagina de confirmar cerrar sesión con botón de Sí señalado y resaltado">
+		<h5>
+			5. ¡Listo! Se le avisará de que salió de su cuenta, y en la pantalla principal aparecerá el enlace para iniciar sesión
+		</h5>
+		<img src="/Recursos/PagPpal.PNG" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+			alt="Pagina principal con enlace de Perfil sustituido por enlace a iniciar sesión">
+	</section>
+	<div class="divider"></div>
+	<section id="categoria4">
+		<h1>Acceder a un tutorial</h1>
+		<p>Los tutoriales son el contenido principal de la página web. Para acceder a ellos, siga estos pasos:</p>
+		<h5>
+			1. Haga click uno de los botones de "Iniciar tutorial" en la categoría deseada
+		</h5>
+		<img src="/Recursos/AyudaElegirCategoria.png" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+			alt="Pagina principal con botones de Iniciar tutorial resaltados">
+		<h5>
+			2. Elija un apartado de la lista de apartados para el lenguaje que le interese. Recomendamos empezar por el principio
+		</h5>
+		<img src="/Recursos/AyudaElegirApartado.png" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+			alt="Pagina de programacion imperativa con apartado de 'Fundamentos básicos' de la columna de C señalado y resaltado">
+		<h5>
+			3. ¡Listo! Ya está el el apartado del tutorial. Podrá navegar al siguiente usando los botones, y ver la lista de apartados
+			al pulsar el botón de "Mostrar páginas del tutorial"
+		</h5>
+		<img src="/Recursos/PagApartado.PNG" ; class="img-fluid expandable-image" onclick="expandirImagen(this)"
+			alt="Pagina de 'Fundamentos básicos' del lenguaje C, con botón de 'Mostrar páginas del tutoria' arriba a la izquierda, y botón para siguiente tutorial
+			abajo a la derecha">
+	</section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="/js/PaginaAyuda.js"></script>
+</body>
+</html>

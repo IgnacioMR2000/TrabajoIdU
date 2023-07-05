@@ -2,117 +2,160 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fundamentos básicos - Tutorial de C - Tutorio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fundamentos básicos - Tutorial de C - Tutorio</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../stylesheetTutoriales.css">
-    <script src="../../js/SesionCuenta.js"></script>
-    <script src="../../js/PaginasVisitadas.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../stylesheetTutoriales.css">
+  <script src="../../js/SesionCuenta.js"></script>
+  <script src="../../js/PaginasVisitadas.js"></script>
+  <script src="../../js/validadorForm.js"></script>
 </head>
 
 <body>
 
-<script>
+  <script>
     addPage('Fundamentos básicos');
-    sessionStorage.setItem('lastPage', 'Fundamentos básicos')</script>
-<header>
-  <div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">Más información</h4>
-          <p class="text-white">Lorem ipsum dolor sit amet consectetur adipiscing elit ac nullam.</p>
-        </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contacta con nosotros</h4>
-          <div class="row">
-            <div class="col-auto">
-              <a href="https://twitter.com/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-twitter" viewBox="0 0 16 16">
-                  <title>Síguenos en Twitter</title>
-                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-                </svg>
-              </a>
-            </div>
-            <div class="col-auto">
-              <a href="https://www.facebook.com/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-facebook" viewBox="0 0 16 16">
-                  <title>Síguenos en Facebook</title>
-                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                </svg>
-              </a>
-            </div>
-            <div class="col-auto">
-              <a href="https://www.google.com/intl/es/gmail/about/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-envelope-at" viewBox="0 0 16 16">
-                  <title>Mándanos un e-mail</title>
-                  <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
-                  <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
-                </svg>
-              </a>
+    //sessionStorage.setItem('lastPage', 'Fundamentos básicos')</script>
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">¿Necesitas ayuda?</h4>
+            <a href="/Ayuda/ppalAyuda.html" class="text-white" target="_blank">Haz click aquí para acceder a la página de ayuda</a>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contacta con nosotros</h4>
+            <div class="row">
+              <div class="col-auto">
+                <a href="https://twitter.com/">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-twitter"
+                    viewBox="0 0 16 16">
+                    <title>Síguenos en Twitter</title>
+                    <path
+                      d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                  </svg>
+                </a>
+              </div>
+              <div class="col-auto">
+                <a href="https://www.facebook.com/">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-facebook"
+                    viewBox="0 0 16 16">
+                    <title>Síguenos en Facebook</title>
+                    <path
+                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                  </svg>
+                </a>
+              </div>
+              <div class="col-auto">
+                <a href="https://www.google.com/intl/es/gmail/about/">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-envelope-at"
+                    viewBox="0 0 16 16">
+                    <title>Mándanos un e-mail</title>
+                    <path
+                      d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z" />
+                    <path
+                      d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container">
-      <a href="../../index.html" class="navbar-brand d-flex me-auto">
-        <strong>Tutorio</strong>
-      </a>
-      <a href="../../LogIn/LogIn.html" class="navbar-brand ms-auto" id="sesionCuenta">
-        <strong>Iniciar sesión</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Contactos y más información">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="../../index.html" class="navbar-brand d-flex me-auto">
+          <strong>Tutorio</strong>
+        </a>
+        <a href="../../LogIn/LogIn.html" class="navbar-brand ms-auto" id="sesionCuenta">
+          <strong>Iniciar sesión</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+          aria-controls="navbarHeader" aria-expanded="false" aria-label="Contactos y más información">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <main>
 
-    <section class="py-5 container">
-      <div class="row py-lg-5">
-        <h1 class="h3">Fundamentos básicos</h1>
-        <p>
+    <div class="container row">
+
+      <div class="col-md-auto ps-0">
+        <button data-bs-toggle="collapse" data-bs-target="#tutorialList" aria-expanded="false" aria-controls="tutorialList" id="boton_mostrar">
+          Mostrar páginas del tutorial
+        </button>
+        <div id="tutorialList" class="collapse multi-collapse ps-2 mb-2">
+            <h2 class="left">Tutorial C</h2>
+            <div class="divider"></div>
+            <a href="fundamentosBasicos.html" class="active">Fundamentos básicos</a><br>
+            <a href="variables.html">Variables, tipos de datos y conversión</a><br>
+            <a href="operadores.html">Operadores y booleanos</a><br>
+            <a href="condicionales.html">Condicionales if-else y switch</a><br>
+            <a href="bucles.html">Bucles for y while</a><br>
+            <a href="arrays.html">Arrays y Strings</a><br>
+            <a href="leerTeclado.html">Lectura desde teclado</a><br>
+            <a href="punteros.html">Direccionamiento de memoria y punteros</a><br>
+            <a href="funciones.html">Funciones</a><br>
+            <a href="ficheros.html">Ficheros</a><br>
+            <a href="estructuras.html">Estructuras</a><br>
+            <a href="enumerados.html">Enumerados</a><br>
+            <a href="CAutoevaluacion.html">Autoevaluación de C</a><br>
+        </div>
+      </div>
+
+      <section class="col-lg-9 py-5 container">
+        <div class=" py-lg-5">
+          <h1 class="h3">Fundamentos básicos</h1>
+          <p>
             (En estas secciones se explica la teoría del tutorial con texto, fotos y videos)
-        </p>
-        <a href = "../Java/Introduccion.html">
-          ¡Visita un tutorial implementado haciendo click aqui!
-        </a>
-        <!--a href="../EjemploAutoevaluacion.html"  class="text-decoration-none text-white  btn btn-lg btn-dark" role = "button">
+          </p>
+          <a href="../Java/Introduccion.html">
+            ¡Visita un tutorial implementado haciendo click aqui!
+          </a>
+          <!--a href="../EjemploAutoevaluacion.html"  class="text-decoration-none text-white  btn btn-lg btn-dark" role = "button">
           Auto-Evaluación
         </a-->
 
-        <div class="mt-4">
-          <a id="rightButton" class="text-decoration-none text-white  btn btn-lg btn-dark" href="variables.html">Variables, tipos de datos y conversión ❯</a>
-        </div>
+          <div class="mt-4">
+            <a id="rightButton" class="text-decoration-none text-white  btn btn-lg btn-dark"
+              href="variables.html">Variables, tipos de datos y conversión ❯</a>
+          </div>
 
-        <div class="text-center">
-          <a id="categoriasButton" class="w-25 mt-4 text-decoration-none text-white  btn btn-lg btn-secondary" href="../ProgramacionImperativa.html">Ir a Categorías</a>
-        </div>
+          <div class="text-center">
+            <a id="categoriasButton" class="mt-4 text-decoration-none text-white  btn btn-lg btn-secondary"
+              href="../ProgramacionImperativa.html">Volver a Categorías</a>
+          </div>
 
-        <div class="text-black text-left mt-4">
-          <h3>Comentarios</h3>
-          <form>
-            <div class="mb-3" id="nuevo_comentario">
+          <div class="text-black text-left mt-4">
+            <h3>Comentarios</h3>
+            <form id="nuevo_comentario" class="mb-3">
               <textarea class="form-control" id="comment_box" rows="3" placeholder="Escribe tu comentario"></textarea>
-              <button type="submit" class="btn btn-dark mt-1">Añadir comentario</button>
-            </div>
-          </form>
+              <button type="submit" class="btn btn-dark mt-1" id="btn_subir" disabled>Añadir comentario</button>
+              <span id="advertencia" style="color: red; margin-left: 2%"></span>
+            </form>
+            <ul id="comentarios">
+            </ul>
+          </div>
         </div>
+      </section>
     </div>
-</section>
+
     <script>
       cambioCabeceraSesion();
+      cargarComentarios();
     </script>
   </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

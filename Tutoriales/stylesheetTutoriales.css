@@ -10,3 +10,48 @@
 	max-width: 25px;
 	float: right;
 }
+
+#comentario-item{
+	border: 10px blue;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+#boton_mostrar{
+	border: 0px;
+	min-height: 35px;
+	background-color: #212529;
+	color: white;
+	font-family: var(--bs-body-font-family);
+	font-weight: 400;
+}
+
+#tutorialList{
+	text-decoration: none;
+	color: #212529;
+	border: 1px solid;
+	border-color: #212529;
+}
+
+#tutorialList a{
+	text-decoration: none;
+	color: #212529;
+}
+
+#tutorialList a.active{
+	background-color: #212529;
+	color: white;
+}
+
+
+.divider {
+	width: 50%;
+	height: 1px;
+	background-color: black;
+	margin-bottom: 2%;
+}
+
+.active{
+	background-color: #212529;
+	color: white;
+}

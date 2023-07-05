@@ -30,15 +30,15 @@
 
   <script>
     addPage('Autoevaluación en C');
-    sessionStorage.setItem('lastPage', 'Autoevaluación en C');
+    //sessionStorage.setItem('lastPage', 'Autoevaluación en C');
   </script>
   <header>
     <div class="collapse bg-dark" id="navbarHeader">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-md-7 py-4">
-            <h4 class="text-white">Más información</h4>
-            <p class="text-white">Lorem ipsum dolor sit amet consectetur adipiscing elit ac nullam.</p>
+            <h4 class="text-white">¿Necesitas ayuda?</h4>
+            <a href="/Ayuda/ppalAyuda.html" class="text-white" target="_blank">Haz click aquí para acceder a la página de ayuda</a>
           </div>
           <div class="col-sm-4 offset-md-1 py-4">
             <h4 class="text-white">Contacta con nosotros</h4>
@@ -109,8 +109,8 @@ int s =0;
 for (int i = 0; i<5){
     s+=3;
     s%2+5;
-}       
-printf("%d",s);        
+}
+printf("%d",s);
                           </code>
                           </pre>
                   </div>
@@ -153,14 +153,14 @@ printf("%d",s);
                   </div>
 
                 </form>
-                
+
               </div>
-              
+
             </div>
             <div id="result" class = "text-center rounded-bottom text-white"></div> <!-- Add this line to create a div with id="result" -->
           </div>
           </div>
-          
+
         <h1 class="h3 m-3">2ª Pregunta</h1>
         <div class="mx-0 mx-sm-auto">
           <div class="card">
@@ -237,7 +237,7 @@ printf("%d",s);
         </div>
 
         <!--checkAnswers() functions traverses through selected answers and indicates if user selection was correct or not.-->
-        <button onclick="checkAnswers()" class="text-decoration-none text-white btn btn-lg btn-dark"
+        <button onclick="checkAnswers()" class="text-decoration-none text-white mb-2 mt-4 btn btn-lg btn-dark"
           role="button">Evaluar
         </button>
 

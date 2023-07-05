@@ -1,14 +1,27 @@
 progress {
 	background-color: #ccc;
 	border-radius: 4px;
-  }
+}
 
-  progress::-webkit-progress-value {
+progress::-webkit-progress-value {
 	background-color: green;
 	border-radius: 4px;
-  }
+}
 
-  progress::-moz-progress-bar {
+progress::-moz-progress-bar {
 	background-color: green;
 	border-radius: 4px;
-  }
+}
+
+.divider-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+}
+
+.divider {
+	width: 50%;
+	height: 1px;
+	background-color: black;
+}
